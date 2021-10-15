@@ -1,0 +1,51 @@
+
+
+  {% extends "app/base.html" %}
+
+  {% load static %}
+
+  
+
+    {% block content %}
+     <main class="#" style="background-color: hsla(191, 86%, 9%, 0.652);">
+        <h1 class="titulo">Servicios</h1>
+    {% for servicio in servicios %}
+    <section class="page-section clearfix">
+          <div class="container">
+            <div class="intro">
+              <img
+                class="intro-img img-fluid mb-3 mb-lg-0 rounded"
+                src="{{servicio.imagen.url}}"style="width: 50%"
+                alt=""
+              />
+              <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-lower">{{servicio.titulo}}</span>
+                  <span class="section-heading-upper">{{servicio.contenido}}</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    {% endfor %}
+    <section class="textst">
+       <div class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">Categorias:&nbsp;&nbsp;&nbsp;
+         {% for servicio in servicios %}
+         {% for categoria in servicio.categorias.all %}
+         <a class="
+            navbar-brand
+            text-uppercase text-expanded
+            font-weight-bold
+            d-lg-none
+          " href="{% url 'categoria_servicios' categoria.id%}
+          ">{{categoria.nombre}}</a> &nbsp;&nbsp;&nbsp;
+         {% endfor %}
+         {% endfor %}
+
+
+       </div>
+
+     </section>
+        </main>
+    {% endblock %}

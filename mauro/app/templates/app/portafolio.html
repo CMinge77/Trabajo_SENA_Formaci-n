@@ -1,0 +1,98 @@
+
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="Portafolio">
+
+      <div class="contenedor">
+        <a href="{% url 'servicios' %}"id="#"><h2 class="titulo">portafolio</h2></a>
+
+          <div class="galeria-port"></div>
+          <div><a href="http://127.0.0.1:8000/servicios/categoria_servicios/3/">
+          <div class="imagen-port">
+            <img src="/static/app/img/img3.jfif" alt="" />
+            <div class="hover-galeria">
+             <img src="/static/app/img/icons.png" alt="" />
+              <p>Mantenimiento correctivo</p>
+            </div>
+
+          </div>
+          </a>
+          </div>
+          <div>
+
+            <a href="http://127.0.0.1:8000/servicios/categoria_servicios/5/">
+          <div class="imagen-port">
+            <img src="/static/app/img/img14_compressed.jpg" alt="" />
+            <div class="hover-galeria">
+              <img src="/static/app/img/icons.png" alt="" />
+              <p>Mantenimiento preventivo</p>
+            </div>
+          </div>
+              </a>
+              <div>
+                  <a href="http://127.0.0.1:8000/servicios/categoria_servicios/10/">
+          <div class="imagen-port">
+            <img src="/static/app/img/img8.jfif" alt="" />
+            <div class="hover-galeria">-->
+              <img src="/static/app/img/icons.png" alt="" />
+              <p>Acompañamiento legal</p>
+            </div>
+          </div>
+                  </a>
+            </div>
+              <a href="http://127.0.0.1:8000/servicios/categoria_servicios/8/">
+          <div class="imagen-port">
+            <img src="/static/app/img/img10.jfif" alt="" />
+            <div class="hover-galeria">
+              <img src="/static/app/img/icons.png" alt="" />
+              <p>Asesoria</p>
+            </div>
+          </div>
+                  </a>
+             </a>
+              <a href="http://127.0.0.1:8000/servicios/categoria_servicios/9/">
+          <div class="imagen-port">
+           <img src="/static/app/img/images(1).png" alt="" />
+            <div class="hover-galeria">
+              <img src="/static/app/img/icons.png" alt="" />
+              <p>Seguimiento</p>
+            </div>
+          </div>
+              <a href="http://127.0.0.1:8000/servicios/categoria_servicios/7/">
+          <div class="imagen-port">
+            <img src="/static/app/img/img11_compressed.jpg" alt="" />
+            <div class="hover-galeria">
+              <img src="/static/app/img/icons.png" alt="" />
+              <p>Gestion</p>
+           </div>
+          </div>
+           </a>
+                  </a>
+         <a href="{% url 'inicio' %}">
+          <div class="imagen-port">
+
+           <img src="/static/app/img/img15.jpg" alt="" />
+          <div class="hover-galeria">
+              <img src="/static/app/img/icons.png" alt="" />
+              <p>El mejor equipo</p>
+           </div>
+
+          </div>
+          </a>
+              <a href="http://127.0.0.1:8000/servicios/categoria_servicios/6/">
+          <div class="imagen-port">
+            <img src="/static/app/img/1_compressed.jpg" alt="" />
+            <div class="hover-galeria">
+             <img src="/static/app/img/icons.png" alt="" />
+              <p>Agenda</p>
+           </div>
+          </div>
+        </a>
+          </div>
+      </div>
+</section>
+{% endblock %}

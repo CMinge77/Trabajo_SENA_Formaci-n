@@ -1,0 +1,20 @@
+{% extends "app/base.html" %}
+
+  {% load static %}
+
+
+{% block content %}
+<!--se crea documento html para detallar contactos detalle persona-->
+<div style="background-color:  hsla(191, 86%, 9%, 0.400); box-shadow: 7px 13px 37px #000;">
+    <header class="forms">
+         <h1>Detalle Mecanico</h1>
+    <div class="controls">Id persona: {{persona.id}}</div>
+    <div class="controls">Nombre: {{persona.nombre}}</div>
+    <div class="controls">Apellido: {{persona.apellido}}</div>
+    <div class="controls">Email: {{persona.email}}</div>
+    <a class="botons" href="{% url 'Inicio' %}">Regreso al inicio
+
+    </a>
+    </header>
+</div>
+ {% endblock %}

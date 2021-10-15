@@ -1,0 +1,18 @@
+{% extends "app/base.html" %}
+{% load humanize %}
+  {% load static %}
+
+
+{% block content %}
+    <h1 class="titulo">Chateamos</h1>
+<div class="forms">
+<form action="#"method="POST" class="controls"style="margin-bottom: 0">
+
+  {% csrf_token %}
+ <div class="controls">{{ form.as_p }}</div>
+<button type="submit" class="botons" style="border-radius: 5px;, width:100px;">Enviar</button>
+</form>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "perfil/usuarios.html" %}
+{% load humanize %}
+  {% load static %}
+
+
+{% block content %}
+
+{% for user in users%}
+
+<article class="forms">
+    <div class="container-article">
+        <img
+                class="intro-img img-fluid mb-3 mb-lg-0 rounded"
+                src="{{user.perfil.image.url}}"style="width: 50%"
+                alt="">
+        <a href="{% url 'post' %}"><h2 class="username">{{user.username }}</h2></a>
+                  <button><a href="#">Follow</a></button>
+
+        </div>
+        <div class="forms">
+          <div><h5>Post</h5>
+          <p>{{ user.post.count }}</p>
+          </div>
+
+
+             <div><h5>Post</h5>
+          <p>0</p>
+          </div>
+
+             <div><h5>Post</h5>
+          <p>0</p>
+          </div>
+            <div class="controls">
+            <i class="clock"></i>
+            <time data-time = "#">{{post.timestamp|naturaltime }}</time>
+            <div class="post">{{post.content}}</div>
+                <div class="controls">{{ PostForm }}</div>
+        </div>
+    </div>
+</article>
+
+{% endfor %}
+{{ block.super }}
+{% endblock %}

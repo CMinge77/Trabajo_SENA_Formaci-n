@@ -1,0 +1,59 @@
+{% extends "app/base.html" %}
+
+  {% load static %}
+
+
+{% block content %}
+        <header>
+          <form method="post" class="forms">
+              {% csrf_token %}
+{#              {{ form.as_p }}#}
+              <h4>Formulario registro</h4>
+              <input
+                class="controls"
+                type="text"
+                name="nombre"
+                placeholder="Ingrese su numbre"
+              />
+              <input
+                class="controls"
+                type="text"
+                name="apellido"
+                placeholder="Ingrese su apellido"
+              />
+              <input
+                class="controls"
+                type="email"
+                name="correo"
+                placeholder="Ingrese su correo"
+              />
+              <input
+                class="controls"
+                type="password"
+                name="Contraceña"
+                placeholder="ingrese su contraceña"
+              />
+              <p>Estoy deacuerdo con <a href="index">terminos y condiciones</a></p>
+                  <a href="{% url 'nuevo' %}">
+              <input class="botons" type="submit" name="" id="" value="Registrar" />
+               </a>
+              <p><a href="{% url 'new' %}">¿Ya tengo cuenta?</a></p>
+             <a href="{% url 'nuevo' %}">regreso al inicio
+             </a>
+        </form>
+             {% if messages %}
+            {% for message in messages %}
+            <b>{{message}}}</b>
+            {% endfor %}
+            {% endif %}
+    </header>
+        <div class="contenido">
+
+            {% endblock %}
+        </div>
+
+
+
+
+
+

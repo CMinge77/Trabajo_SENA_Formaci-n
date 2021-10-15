@@ -1,0 +1,19 @@
+{% extends "app/base.html" %} {% load static %} {% block content %}
+<div
+  style="
+    background-color: hsla(191, 86%, 9%, 0.4);
+    box-shadow: 7px 13px 37px #000;
+  "
+>
+  <form method="POST" class="forms">
+    <h1>Agregar Mecanico</h1>
+
+    <table class="controls">
+      {{formaPersona}}
+    </table>
+    <button type="submit" class="botons">Enviar</button>
+    {% csrf_token %}
+  </form>
+</div>
+
+{% endblock %}

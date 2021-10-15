@@ -1,0 +1,26 @@
+{% extends "app/base.html" %}
+{% load humanize %}
+  {% load static %}
+
+
+{% block content %}
+
+{% for post in posts%}
+
+<article class="forms">
+    <div class="container-article">
+        <img
+                class="intro-img img-fluid mb-3 mb-lg-0 rounded"
+                src="{{post.user.perfil.image.url}}"style="width: 50%"
+                alt="">
+        <div>
+            <h2 class="username"><a href="{% url 'perfil' post.user.username %}">{{post.user.username }}</a></h2>
+            <i class="clock"></i>
+            <time data-time = "#">{{post.timestamp|naturaltime }}</time>
+            <div class="post">{{post.content}}</div>
+        </div>
+    </div>
+</article>
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,54 @@
+
+    {% extends "app/base.html" %} 
+    
+    
+    {% load static %}
+
+
+    {% block content %}
+
+<div class="">
+<!--     <div style="float:right;">-->
+<!--  -->
+<!--     -->
+<h1 class="titulo">Tienda</h1>
+<!--  -->
+<!--     </div>-->
+
+     <div class="portafolio" >
+     {% include "carro/widget.html" %}
+
+{% for producto in productos %}
+
+    <div class="">
+        <div class="galeria-port" style="width: 100%; margin: 25px 25px;">
+
+        <img src="{{producto.imagen.url}}" class="imagen-port">
+
+        <div class="card-body" style="text-align: center;color: #ffffcc">
+
+            <h7 class="card-title">{{producto.nombre}}</h7>
+
+            <p class="card-text">{{producto.precio}}&nbsp;€</p>
+
+            </div>
+             <div class="card-footer text-center">
+
+            <a href="{% url 'carro:agregar' producto.id %}" class="botons">Agregar al carro</a>
+
+        </div>
+
+    </div><!--card que se cierra-->
+    
+  </div>
+
+
+        
+
+    {% endfor %}
+  </div>
+
+  </div>
+
+    {% endblock %}
+

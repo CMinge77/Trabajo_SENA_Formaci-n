@@ -1,0 +1,39 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block content %}
+    <div style="background-color:  hsla(191, 86%, 9%, 0.400); box-shadow: 7px 13px 37px #000;">
+<div style="background-color:  hsla(191, 86%, 9%, 0.400); box-shadow: 7px 13px 37px #000;">
+    <table class="forms">
+        <div class="control">{{mensaje1}}</div>
+        <div>
+          <h4 class="forms">listado Mecanicos Disponibles <br> Cantidad de Mecanicos: {{no_personas}}
+              <div><a class="botons" href="{% url 'mecanico' %}"style="margin-left: 300px;">Agregar Mecanico
+              </a></div>
+          </h4>
+            <thead class="controls">
+                <tr class="controls">
+                    <th class="controls"style="color: #1f53c5">Id</th>
+                    <th class="controls"style="color: #1f53c5">Nombre</th>
+                    <th class="controls"style="color: #1f53c5">Email</th>
+                    <th class="controls" ><a href="{% url 'nuevo' %}" class="p1" style="color: #1f53c5; text-decoration: underline">pagina principal</a></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+           </thead>
+        <tbody class="controls">
+        {% for persona in personas %}
+            <tr class="controls">
+                <td class="controls">{{persona.id}}</td>
+                <td class="controls">{{persona.nombre}} {{persona.apellido}}</td>
+                <td class="controls">{{persona.email}}</td>
+                <td class="controls"><a href="../detalle_persona/{{persona.id}}">Detalle</a></td>
+                <td class="controls"><a href="../edit_persona/{{persona.id}}">Editar</a></td>
+                <td class="controls"><a href="../eliminar_persona/{{persona.id}}">Eliminar</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </div>
+    </table>
+</div>
+    </div>
+ {% endblock %}

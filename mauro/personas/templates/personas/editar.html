@@ -1,0 +1,21 @@
+{% extends "app/base.html" %}
+
+  {% load static %}
+
+
+{% block content %}
+    <div style="background-color:  hsla(191, 86%, 9%, 0.400); box-shadow: 7px 13px 37px #000;">
+<!--estamos creando un nuevo objeto para enviar datos mediante django con un formulario datos ala base-->
+
+        <form  method="POST" class="forms">
+            <h1>Editar Mecanico</h1>
+            <table class=""style="color: #1f53c5">
+            {{formaPersona}}
+            </table>
+            <button type="submit" class="botons">Enviar</button>
+            {% csrf_token %}
+             <a class="botons" href="{% url 'Inicio' %}">Inicio</a>
+        </form>
+
+    </div>
+{% endblock %}

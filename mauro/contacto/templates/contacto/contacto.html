@@ -1,0 +1,36 @@
+
+
+  {% extends "app/base.html" %}
+
+  {% load static %}
+
+  
+ 
+    {% block content %}
+
+  <div class="forms"style="background-color: hsla(191, 86%, 9%, 0.400);">
+
+    {% if "valido" in request.GET %}
+
+        <h2 class="titulo"style="font-size: 30px; color: #1e7e34">Informacion enviada correctamente gracias</h2>
+
+        {% else %}
+
+        <h2 class="titulo"style="font-size: 30px; olor:red;">Informacion no pudo ser enviada correctamente gracias</h2>
+
+    {% endif %}
+
+    <form action="" method="POST" class="controls">
+        {% csrf_token %}
+    <table class="controls">{{miFormulario.as_table}}
+      <td class="controls"></td>
+      <th></th>
+      <th></th>
+
+    </table>
+      <input type="submit" value="Enviar" class="botons">
+  
+  </form>
+</div>
+
+    {% endblock %}
